@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,52 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #ffe524;
+}
+
+sub{
+  color: green
+}
+Nav{
+  font-family:'Arial, Helvetica, sans-serif';
+  font-weight: bold;
+
+  
+}
+.nav-item.dropdown:hover .dropdown-menu {
+  display:block;
+  
+}
+.dropdown .dropdown-menu 
+.dropdown-item:active, .dropdown .dropdown-menu 
+.dropdown-item:hover{background-color:#ffe524 !important;
+  text-decoration:underline;text-decoration-color:red;}
+
+
+
+#header{
+  color: rgba(11, 90, 99, 0.344)
+}
+
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffe524;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
