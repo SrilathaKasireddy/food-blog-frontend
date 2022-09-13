@@ -1,79 +1,52 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
-import IcecreamSharpIcon from '@mui/icons-material/IcecreamSharp';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from "./Home";
+import About from "./About";
+import Items from "./items";
+import ItemAdditionForm from "./additem";
+import EditItem from './edititems';
+import ItemDetails from "./itemdetails";
+import Login from "./Login";
+import {Register} from "./Register";
+import {ForgetPassword} from './ForgetPassword';
+import {ChangePassword }from "./ChangePassword";
+import {PasswordUpdated} from "./PasswordUpdated";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar bg="light" expand="lg">
-          <Container>
-            < IcecreamSharpIcon style={{ color: "#277970" }} /><b><Navbar.Brand href="#home" id="header">Simply<sub> Recipes</sub></Navbar.Brand></b>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="dropdown"  >
-
-                <NavDropdown title="Recipies" className="hover-underline-animation">
-                  <NavDropdown.Item href="#action/3.1" >Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Easy & Quick" id="nav-dropdown" className="hover-underline-animation">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Cuisines" id="nav-dropdown" className="hover-underline-animation">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
 
 
 
+      <Routes>
+      <Route path="/"
+            element={<Login/>}/>
 
-                <Nav.Link href="#About Us">About Us</Nav.Link>
-              </Nav>
-              <Form className="d-flex" style={{ marginLeft: "auto" }}>
-                <Form.Control
-                  type="search"
-                  placeholder="Search...."
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+      <Route path="/additems"element={<ItemAdditionForm />}/>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/items/edit/:id" element={<EditItem />} />
+        <Route path="/items/:id" element={<ItemDetails />} />
+        <Route path="/items" element={<Items />} />
+        <Route path="/Register" element={<Register />}  />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/ForgetPassword" element={<ForgetPassword />} />
+        <Route path="/PasswordUpdated" element={<PasswordUpdated />} />
+        {/* <Route path="/" element={<Navigate replace to="/Login" />} /> */}
+        <Route path="/reset-password/:id/:token" element={<ChangePassword />} />
+        
+        {/* 
+        
+        
+        
+        <Route path="*" element={<NotFound />} /> */}
+      </Routes>
 
-      </header>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+

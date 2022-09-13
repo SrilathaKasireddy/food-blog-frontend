@@ -1,53 +1,86 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
   color: #ffe524;
 }
+#container-main{
+  margin-top:20px
+}
+#container-main {
+  
+  
+  transition: width 2s;
+}
+
+#container-main:hover {
+  /* border:5px solid rgb(200, 200, 39) */
+  border-left:5px solid green;
+  border-bottom:5px solid green;
+}
+
+
+.itemDescription{
+  font-size:15px;
+  font-family:"roboto"
+}
+#breakfast{
+  
+font-size: 20px;
+border:5px solid green;
+border-style: dashed;
+padding:10px;
+margin: 30%;
+  
+}
+
+#leftbox {
+  float:left; 
+  background:rgb(204, 246, 253);
+  width:35%;
+  padding:10px;
+  margin:10px;
+
+}
+
+
+h1{
+  color:green;
+  text-align:center;
+}
+.itemName{
+  font-size:200px;
+  color:teal;
+
+  text-align:center;
+
+}
+
+
+.itemName{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size:15px;
+}
+.itemsList{
+  display: flex;
+  flex-wrap: wrap;
+}
+#heading-item{
+  text-align: center;
+  color: #01492f;
+  font-weight: bold;
+  background-color: #baf3dd
+}
 
 sub{
-  color: green
+  color: green;
+  
 }
 Nav{
   font-family:'Arial, Helvetica, sans-serif';
   font-weight: bold;
+  
 
   
 }
@@ -60,10 +93,15 @@ Nav{
 .dropdown-item:hover{background-color:#ffe524 !important;
   text-decoration:underline;text-decoration-color:red;}
 
+  
 
-
+img{
+  object-fit: contain;
+}
 #header{
-  color: rgba(11, 90, 99, 0.344)
+  color: rgba(11, 90, 99, 0.344);
+  font-size: 2.00em
+
 }
 
 
@@ -84,3 +122,31 @@ Nav{
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+
+
+/* For demonstration purposes only: */
+body { font-size: 3.5em }
+h1 { font-size: 0.5em }
+
+

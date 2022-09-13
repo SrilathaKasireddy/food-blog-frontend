@@ -1,0 +1,218 @@
+$c-01: #4b984b;
+$c-02: #2d7520;
+$c-03: #c8e47f;
+$c-04: #b95454;
+$c-05: #504747;
+
+.content {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  margin:50px;
+  justify-content: center;
+  align-items: center;
+
+  .broccoli {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .broccoliTop {
+      width: 50%;
+      height: 50%;
+      z-index:2;
+
+      span {
+        position: absolute;
+        background-color: $c-01;
+        border-radius: 50px;
+
+        &:nth-child(1) {
+          width: 30%;
+          height: 30%;
+          top: 12%;
+          left: -5%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+          height: 27%;
+          top: 26%;
+          left: 4%;
+          transform: rotate(10deg);
+        }
+        &:nth-child(3) {
+          width: 20%;
+          height: 54%;
+          top: 0%;
+          left: 9%;
+          transform: rotate(-23deg);
+        }
+        &:nth-child(4) {
+          width: 20%;
+          height: 55%;
+          top: -10%;
+          left: 20%;
+          transform: rotate(-5deg);
+        }
+        &:nth-child(5) {
+          width: 17%;
+          height: 54%;
+          top: -5%;
+          left: 36%;
+          transform: rotate(0deg);
+        }
+        &:nth-child(6) {
+          width: 20%;
+          height: 58%;
+          top: -10%;
+          left: 46%;
+          transform: rotate(5deg);
+        }
+        &:nth-child(7) {
+          width: 25%;
+          height: 53%;
+          top: 0%;
+          left: 60%;
+          transform: rotate(10deg);
+        }
+        &:nth-child(8) {
+          width: 30%;
+          height: 30%;
+          top: 15%;
+          left: 70%;
+          transform: rotate(10deg);
+        }
+        &:nth-child(9) {
+          width: 20%;
+          height: 20%;
+          top: 35%;
+          left: 70%;
+          transform: rotate(10deg);
+        }
+      }
+    }
+    .dots {
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      span {
+        background-color: $c-02;
+        position: absolute;
+        border-radius: 100%;
+        &:nth-child(1) {
+          width: 20px;
+          height: 20px;
+          left: 10%;
+          top: 10%;
+        }
+        &:nth-child(2) {
+          width: 30px;
+          height: 30px;
+          left: 20%;
+          top: 10%;
+        }
+
+        &:nth-child(4) {
+          width: 20px;
+          height: 20px;
+          right: 40%;
+          top: 0%;
+        }
+        &:nth-child(5) {
+          width: 30px;
+          height: 30px;
+          right: 20%;
+          top: 10%;
+        }
+      }
+    }
+
+    .broccoliTale {
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      top: 0;
+      background-color: $c-03;
+      z-index: 0;
+    }
+    .face {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      .eye {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: eyes 3s ease infinite;
+        overflow: hidden;
+        bottom: 25%;
+
+        @keyframes eyes {
+          0% {
+            height: 20px;
+          }
+          10% {
+            height: 0px;
+          }
+          20% {
+            height: 20px;
+          }
+          100% {
+            height: 20px;
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          background-color: $c-05;
+          width: 70%;
+          height: 70%;
+          border-radius: 100%;
+          bottom: 2px;
+          left: 5px;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: white;
+          width: 30%;
+          height: 30%;
+          border-radius: 100%;
+          top: 5px;
+          left: 5px;
+        }
+
+        &:nth-child(1) {
+          left: 40%;
+        }
+        &:nth-child(2) {
+          right: 40%;
+        }
+      }
+
+      .mouth {
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        background-color: $c-04;
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+        border-top: 0;
+        bottom: 12%;
+      }
+    }
+  }
+}
