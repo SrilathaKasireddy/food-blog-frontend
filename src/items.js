@@ -33,17 +33,24 @@ export default function Items() {
   },[]);
   const navigate = useNavigate();
   return (
-   <div id ="heading-item" ><br></br><b id = "breakfast">Indian Breakfasts </b>
+
+   <div id ="heading-item" ><br></br><b id = "breakfast">
+    Indian Breakfasts </b>
+   
+   <Button style={{ backgroundColor: "#277970",
+   color:"white",marginRight:"auto"}} variant="outlined" 
+  onClick={() => {
+          return navigate("/home");
+        }}
+        > <HomeIcon  />  Back to Home</Button>
+       
+   
    <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
           return navigate("/additems");
         }}
         >  <AddIcon/>AddItem</Button>
   
-   <Button style={{ backgroundColor: "#277970",color:"white"}} variant="outlined" 
-  onClick={() => {
-          return navigate("/home");
-        }}
-        > <HomeIcon  />  Back to Home</Button>
+   
    
    
     <div  className="itemsList" >

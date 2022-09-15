@@ -62,7 +62,8 @@ export default function EditItem() {
 function ItemEditCore({ item }) {
 
 
-  const { handleBlur, handleChange, handleSubmit, values, touched, errors } = useFormik({
+  const { handleBlur,
+     handleChange, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
       namee: item.namee,
       imgg: item.imgg,

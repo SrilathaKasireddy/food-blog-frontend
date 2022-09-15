@@ -14,10 +14,26 @@
   transition: width 2s;
 }
 
+.Credentials{
+
+  width:100%;
+  margin:3%;
+  font-size:20px;
+  height:80px;
+  
+  
+ 
+
+}
+#comment{
+font-family:'Times New Roman', Times, serif
+}
+
 #container-main:hover {
-  /* border:5px solid rgb(200, 200, 39) */
-  border-left:5px solid green;
-  border-bottom:5px solid green;
+  /* border:2px solid green;
+  border-left:2px solid green;
+  border-bottom:2px solid green; */
+  transform: scale(1.03);
 }
 
 
@@ -29,15 +45,18 @@
   
 font-size: 20px;
 border:5px solid green;
-border-style: dashed;
-padding:10px;
+border-style: dotted;
+/* padding:10px; */
 margin: 30%;
   
+}
+h4{
+  color:green;
 }
 
 #leftbox {
   float:left; 
-  background:rgb(204, 246, 253);
+  background:#caf6f2;
   width:35%;
   padding:10px;
   margin:10px;
@@ -57,6 +76,27 @@ h1{
 
 }
 
+#respond {
+  margin-top: 40px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
 
 .itemName{
   font-family:Georgia, 'Times New Roman', Times, serif;
@@ -124,7 +164,7 @@ img{
 }
 
 .wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-name: wave-animation;  
   animation-duration: 2.5s;        /* Change to speed up or slow down */
   animation-iteration-count: infinite;  /* Never stop waving :) */
   transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
@@ -133,20 +173,11 @@ img{
 
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   10% { transform: rotate(14.0deg) }  
    20% { transform: rotate(-8.0deg) }
    30% { transform: rotate(14.0deg) }
    40% { transform: rotate(-4.0deg) }
    50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+   60% { transform: rotate( 0.0deg) } 
   100% { transform: rotate( 0.0deg) }
 }
-
-
-
-
-/* For demonstration purposes only: */
-body { font-size: 3.5em }
-h1 { font-size: 0.5em }
-
-
