@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 
 
 const formValidationSchema = yup.object({
- UserName: yup.string().required("Please add name"),
+//  UserName: yup.string().required("Please add name"),
  Comment: yup.string().required("Please add comment"),
  
 
@@ -25,7 +25,7 @@ export default function CommentAdditionForm() {
 
  const { handleBlur, handleChange, handleSubmit, values, touched, errors } = useFormik({
   initialValues: {
-   UserName:"",
+  //  UserName:"",
    Comment: "",
 
   },
@@ -45,6 +45,11 @@ export default function CommentAdditionForm() {
   ).then(() => navigate("/items"))
 
  }
+ 
+
+
+
+
  return (
   
    <Grid container direction="column" alignItems="center" justify="center">
@@ -52,7 +57,7 @@ export default function CommentAdditionForm() {
 
      
 <h1>Leave a Comment</h1>
-     <TextField
+     {/* <TextField
       error={touched.UserName && errors.UserName}
       style={{ padding: "2%" }}
       label="UserName"
@@ -62,7 +67,7 @@ export default function CommentAdditionForm() {
       value={values.UserName}
       onChange={handleChange}
       onBlur={handleBlur}
-      helperText={touched.UserName && errors.UserName} />
+      helperText={touched.UserName && errors.UserName} /> */}
      <br></br>
      <TextField
       error={touched.Comment && errors.Comment}

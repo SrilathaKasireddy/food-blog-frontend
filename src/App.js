@@ -13,6 +13,8 @@ import { ChangePassword } from "./ChangePassword";
 import { PasswordUpdated } from "./PasswordUpdated";
 import CommentAdditionForm from "./addcomment";
 import EditComment from"./editcomment";
+import Search from "./Search";
+import NotFound from "./Notfound";
 
 function App() {
   return (
@@ -33,14 +35,11 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/PasswordUpdated" element={<PasswordUpdated />} />
-        {/* <Route path="/" element={<Navigate replace to="/Login" />} /> */}
+        <Route path="/" element={<Navigate replace to="/Login" />} />
         <Route path="/reset-password/:id/:token" element={<ChangePassword />} />
         <Route path="/comments" element={<Comments />} />
-        {/* 
-        
-        
-        
-        <Route path="*" element={<NotFound />} /> */}
+        <Route path="/search" element={<Search />} />
+         <Route path="*" element={<NotFound />} /> 
       </Routes>
 
     </div>

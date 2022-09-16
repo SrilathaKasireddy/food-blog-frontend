@@ -5,8 +5,10 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { API } from "./global"
 import ShareIcon from '@mui/icons-material/Share';
 import CommentIcon from '@mui/icons-material/Comment';
+import Counter from "./Counter"
+
 import Comments from "./comments"
-import CommentAdditionForm from "./addcomment"
+import CommentAdditionForm from "./addcomment";
 
 
 import Card from '@mui/material/Card';
@@ -34,59 +36,62 @@ export default function ItemDetails() {
 
   return (
     <div>
-      
-    <div id="boxes" style={{
-      backgroundColor: "#F1F7F6"
-    }}>
-      
-      <Button onClick={() => {
+
+      <div id="boxes" style={{
+        backgroundColor: "#F1F7F6"
+      }}>
+
+        <Button onClick={() => {
           return navigate(-1);
-        }} style={{marginLeft:"90%",color:"green",margin:"10px"}}>
+        }} style={{ marginLeft: "90%", color: "green", margin: "10px" }}>
           <ArrowBackIosNewIcon />Back</Button>
-         
-          
-      <h1>{item.namee} Recipe</h1>
-
-      <div id="leftbox">
-        <img style={{
-          width: '100%', height: 300,
-          objectFit: "cover"
-        }}
-          className="itemImage" src={item.imgg}
-          alt={item.namee} />
-        <div className="itemDescription">{item.contentt}</div>
-      </div>
-      <Card style={{
-        width: '60%', padding: '30px',
-        margin: '30px', backgroundColor: "#caf6f2"
-      }}>
-        <h4>Ingredients</h4>
-        <p>{item.ingredients}</p>
-      </Card>
-      <Card style={{
-        width: '60%',
-        padding: '30px', margin: '40px', backgroundColor: "#caf6f2"
-      }}>
-        <h4 >Method</h4>
-        <p>{item.method}</p>
-      </Card>
 
 
-      
-      
-      {/* <h4>Loved  the Recipe!<Button style={{ backgroundColor: "green", color: "white", }}
+        <h1>{item.namee} Recipe</h1>
+
+        <div id="leftbox">
+          <img style={{
+            width: '100%', height: 400,
+            objectFit: "cover"
+          }}
+            className="itemImage" src={item.imgg}
+            alt={item.namee} />
+             <Counter/>
+          <div className="itemDescription">{item.contentt}</div>
+
+        </div>
+       
+        <Card style={{
+          width: '60%', padding: '30px',
+          margin: '30px', backgroundColor: "#caf6f2"
+        }}>
+          <h4>Ingredients</h4>
+          <p>{item.ingredients}</p>
+        </Card>
+        <Card style={{
+          width: '60%',
+          padding: '30px', margin: '40px', backgroundColor: "#caf6f2"
+        }}>
+          <h4 >Method</h4>
+          <p>{item.method}</p>
+        </Card>
+
+
+
+
+        {/* <h4>Loved  the Recipe!<Button style={{ backgroundColor: "green", color: "white", }}
         variant="outlined"><ShareIcon />Share </Button></h4> */}
 
 
 
 
 
+      </div>
+
+
+      <CommentAdditionForm />
+      <Comments />
+
     </div>
-
-
-    <CommentAdditionForm/>
-<Comments/>
-
-</div>
   )
 }

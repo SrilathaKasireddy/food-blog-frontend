@@ -13,7 +13,9 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import IcecreamSharpIcon from '@mui/icons-material/IcecreamSharp';
+import { useNavigate } from "react-router-dom";
 export default function Home() {
+  const navigate = useNavigate();
 
 
  return (
@@ -37,13 +39,13 @@ export default function Home() {
          <NavDropdown.Item href="#action/3.6">Drinks</NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Easy & Quick" id="nav-dropdown" className="hover-underline-animation">
-         <NavDropdown.Item href="#action/3.1">Easy Breakfast</NavDropdown.Item>
+         <NavDropdown.Item href="/items">Easy Breakfast</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.2">Quick Lunch</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">Quick Dinner </NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">Easy Pastas </NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">Easy Chicken</NavDropdown.Item>
         </NavDropdown>
-        <NavDropdown title="Cuisines" id="nav-dropdown" className="hover-underline-animation">
+        {/* <NavDropdown title="Cuisines" id="nav-dropdown" className="hover-underline-animation">
          <NavDropdown.Item href="#action/3.1">Indian</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.2">Mexican</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">Japaneese</NavDropdown.Item>
@@ -52,7 +54,7 @@ export default function Home() {
          <NavDropdown.Item href="#action/3.3">French</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">Italian</NavDropdown.Item>
          <NavDropdown.Item href="#action/3.3">British</NavDropdown.Item>
-        </NavDropdown>
+        </NavDropdown> */}
          <Nav.Link href="/About">About Us</Nav.Link>
        </Nav>
        <Form className="d-flex" style={{ marginLeft: "auto" }}>
@@ -62,7 +64,9 @@ export default function Home() {
          className="me-2"
          aria-label="Search"
         />
-        <Button variant="outline-success">Search</Button>
+        <Button  onClick={() => {
+                  navigate("/search");
+                }} variant="outline-success">Search</Button>
        </Form>
       </Navbar.Collapse>
      </Container>
@@ -98,8 +102,8 @@ export default function Home() {
       </Typography>
      </CardContent>
      <CardActions>
-      <Button variant="success" size="small">Share</Button>
-      <Button size="success">Learn More</Button>
+      {/* <Button variant="success" size="small">Share</Button>
+      <Button size="success">Learn More</Button> */}
      </CardActions>
     </Card>
    </div>

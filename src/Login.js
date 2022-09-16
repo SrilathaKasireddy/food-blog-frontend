@@ -25,6 +25,7 @@ export default function Login() {
    headers: {
     "Content-Type": "application/json",
    },
+  
   }).then((data) => data.json())
    .then((data1) => {
     localStorage.setItem("token",data1.token)

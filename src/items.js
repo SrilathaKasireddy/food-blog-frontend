@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import {useNavigate} from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import AddIcon from '@mui/icons-material/Add';
+import Form from 'react-bootstrap/Form';
+import Search from "./Search"
+
 
 
  
@@ -36,6 +39,9 @@ export default function Items() {
 
    <div id ="heading-item" ><br></br><b id = "breakfast">
     Indian Breakfasts </b>
+
+    
+    
    
    <Button style={{ backgroundColor: "#277970",
    color:"white",marginRight:"auto"}} variant="outlined" 
@@ -44,15 +50,28 @@ export default function Items() {
         }}
         > <HomeIcon  />  Back to Home</Button>
        
+       
    
    <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
           return navigate("/additems");
         }}
         >  <AddIcon/>AddItem</Button>
   
-   
-   
-   
+   {/* <Form className="d-flex" style={{ marginRight: "80%" }}>
+        <Form.Control
+         type="search"
+         placeholder="Search...."
+         className="me-2"
+         aria-label="Search"
+        />
+        <Button style={{ backgroundColor: "#277970",
+   color:"white"}} variant="outlined" 
+  onClick={() => {
+          return navigate("/items/search");
+        }}
+        > Search</Button>
+       </Form>  */}
+       
     <div  className="itemsList" >
     
       {itemInfo.map((value, index) => {

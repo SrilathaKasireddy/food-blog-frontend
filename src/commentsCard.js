@@ -13,8 +13,25 @@ export default  function CommentCard
 
   
   const navigate = useNavigate();
-  // const [token, setToken] = 
-  // useState(localStorage.getComment("token"));
+  const [token, setToken] = 
+  useState(localStorage.getItem("token"));
+
+  // let token = localStorage.getItem('token')
+const parseJwt = (token) => {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (e) {
+    return null;
+  }
+};
+
+console.log(token)
+if (token) 
+  var Username = parseJwt(token).UserName
+  console.log(Username)
+  
+
+
   return (
     <div id="containermain">
       <Card  style={{ backgroundColor: "whitesmoke", textAlign: "center", justifyContent: "center" }}>
@@ -22,7 +39,8 @@ export default  function CommentCard
         {/* <CardContent> */}
           <div className="Credentials">
           
-            <span>PostedBy</span> <span style={{color:"green",backgroundColor:"white"}}>{`${UserName}`}</span>
+            <span>PostedBy</span> <span style={{color:"green",backgroundColor:"white"}}>
+            {Username}</span>
             
             <div id="comment">{`${Comment}`}
             <IconButton

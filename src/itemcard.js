@@ -7,15 +7,18 @@ import CardContent from '@mui/material/CardContent';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { API } from "./global"
-export function ItemCard({ 
-  img, name, rating, content, id, getItemAPI }) {
+
+export  function ItemCard({ 
+  img, name, rating, content, id, getItemAPI ,itemInfo}) {
 
   const [show, setShow] = useState(true);
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
+    
     <div id="container-main" style={{ display: "flex", flexWrap: "wrap" }}>
-      <Card style={{ margin: 10, width: 350, backgroundColor: "#D1E4DA", display: "flex", flexWrap: "wrap", textAlign: "center", justifyContent: "center" }} >
+      
+      <Card style={{ margin: 10, width: 350, backgroundColor: "#E7FFF2", display: "flex", flexWrap: "wrap", textAlign: "center", justifyContent: "center" }} >
         <img style={{ width: '100%', height: 300,
          objectFit: "cover" }} className="itemImage" src={img} alt={name} />
         <CardContent>
