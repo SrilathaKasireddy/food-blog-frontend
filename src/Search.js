@@ -39,8 +39,11 @@ import {ItemCard} from "./itemcard"
       if (keyword !== '') {
 
         const results = itemInfo.filter((item) => {
-            
-          return item.namee.toLowerCase().startsWith(keyword.toLowerCase());
+          return item.namee.toString()
+                .toLowerCase()
+                .indexOf(keyword.toLowerCase()) > -1  
+
+          // return item.namee.toLowerCase().startsWith(keyword.toLowerCase());
           // Use the toLowerCase() method to make it case-insensitive
         });
         setFoundItems(results);
@@ -48,8 +51,8 @@ import {ItemCard} from "./itemcard"
         setFoundItems(itemInfo);
         // If the text field is empty, show all users
       }
-  
-      setItem(keyword);
+
+       setItem(keyword);
     };
   
     return (
