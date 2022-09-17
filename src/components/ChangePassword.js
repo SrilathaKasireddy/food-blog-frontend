@@ -36,6 +36,7 @@ export function ChangePassword() {
    body: JSON.stringify(authDetail),
    headers: {
      "Content-Type" : "application/json",
+     "x-auth-token" :`${token}`
 
    },
  }).then((data)=>data.json())
@@ -52,6 +53,7 @@ export function ChangePassword() {
 }
 
 function SetNewPassword({id}){
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
  const navigate=useNavigate();
  const[errorMsg,setErrorMsg]=useState("");
@@ -63,6 +65,7 @@ function SetNewPassword({id}){
    body: JSON.stringify(newData),
    headers: {
      "Content-Type" : "application/json",
+     "x-auth-token" :`${token}`
 
    },
  }).then((data)=>data.json())
