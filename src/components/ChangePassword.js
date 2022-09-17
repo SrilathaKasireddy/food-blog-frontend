@@ -12,7 +12,7 @@ import * as Yup from "yup";
 
 import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router-dom'
-import { API } from './global.js';
+import { API } from '../global.js';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';

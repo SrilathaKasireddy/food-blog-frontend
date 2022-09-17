@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from "yup";
 import {Link} from "react-router-dom"
 import TextField from '@mui/material/TextField'
-import { API } from './global.js';
+import { API } from '../global.js';
 import { useState } from 'react';
 import { Grid } from "@material-ui/core";
 import Paper from '@mui/material/Paper';

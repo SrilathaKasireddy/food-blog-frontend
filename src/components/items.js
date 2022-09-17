@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ItemCard } from './itemcard';
-import { API } from './global';
+import { API } from '../global';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';

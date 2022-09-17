@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -58,16 +58,22 @@ export default function Home() {
         </Navbar>
       </header>
       <hr style={{ color: "#DFBA21" }}></hr>
-      <div style={{ backgroundColor: "#caf6f2", width: "50%", textAlign: "center", marginLeft: "5%", borderRadius: "5px" }}>
+      <div style={{ width: "100%",
+       textAlign: "center", margin: "auto", borderRadius: "5px" }}>
         <h3 style={{ color: "green", textAlign: "center" }}>Less stress &  <CoffeeIcon style={{ color: "#277970" }} />MORE JOY </h3>
-        <Card style={{ backgroundColor: "#caf6f2" }} >
-          <img width="60%" height="300" alt="home" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/2022-04-29-tcu-s3-rx011-aussie-italian-adam-liaw-classic-margherita-pizza-l_50.jpg">
+        <Card style={{ backgroundColor: "#caf6f2" ,width: "100%"}} >
+          <img width="50%" 
+          height="500px"
+           alt="home"  
+           style={{margin:"10px"}}
+           src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/2022-04-29-tcu-s3-rx011-aussie-italian-adam-liaw-classic-margherita-pizza-l_50.jpg">
           </img>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography  gutterBottom variant="h5" component="div" style={{color:"#277970"}}>
               Margherita Pizza
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            
+            <Typography variant="h6" style={{color:"black"}}>
               A traditional Neapolitan Margherita pizza recipe is
               tomato sauce with fresh tomatoes, mozzarella cheese and
               basil which represent the colours of the Italian flag

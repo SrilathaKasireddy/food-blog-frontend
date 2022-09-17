@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useState } from "react";
-import { API } from "./global";
+import { API } from "../global";
 import { Grid } from "@material-ui/core";
 import Paper from '@mui/material/Paper';
 

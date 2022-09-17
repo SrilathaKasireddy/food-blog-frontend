@@ -1,72 +1,74 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Home from "./Home";
-import About from "./About";
-import Items from "./items";
-import Comments from "./comments"
-import ItemAdditionForm from "./additem";
-import EditItem from './edititems';
-import ItemDetails from "./itemdetails";
-import Login from "./Login";
-import { Register } from "./Register";
-import { ForgetPassword } from './ForgetPassword';
-import { ChangePassword } from "./ChangePassword";
-import { PasswordUpdated } from "./PasswordUpdated";
-import CommentAdditionForm from "./addcomment";
-import NotFound from "./Notfound";
- import  ProtectedRoute from "./ProtectedRoute"
+import Home from "./components/Home";
+import About from "./components/About";
+import Items from "./components/items";
+import Comments from "./components/comments"
+import ItemAdditionForm from "./components/additem";
+import EditItem from './components/edititems';
+import ItemDetails from "./components/itemdetails";
+import Login from "./components/Login";
+import { Register } from "./components/Register";
+import { ForgetPassword } from './components/ForgetPassword';
+import { ChangePassword } from "./components/ChangePassword";
+import { PasswordUpdated } from "./components/PasswordUpdated";
+import CommentAdditionForm from "./components/addcomment";
+import NotFound from "./components/Notfound";
+import ProtectedRoute from "./components/ProtectedRoute"
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login />}  />
-       
-        <Route path="/items" element={<ProtectedRoute> 
+        <Route path="/" element={<Login />} />
+
+        <Route path="/items" element={<ProtectedRoute>
           <Items />
         </ProtectedRoute>}>
         </Route>
-        <Route path="/home" element={<ProtectedRoute> 
+        <Route path="/home" element={<ProtectedRoute>
           <Home />
         </ProtectedRoute>}>
         </Route>
-          <Route path="/comments" element={<ProtectedRoute> 
+        <Route path="/comments" element={<ProtectedRoute>
           <Comments />
         </ProtectedRoute>}>
-          </Route>
-          <Route path="/additems" element={<ProtectedRoute> 
+        </Route>
+        <Route path="/additems" element={<ProtectedRoute>
           <ItemAdditionForm />
         </ProtectedRoute>}>
-          </Route>
-          <Route path="/addcomments" element={<ProtectedRoute> 
-          <CommentAdditionForm  />
+        </Route>
+        <Route path="/addcomments" element={<ProtectedRoute>
+          <CommentAdditionForm />
         </ProtectedRoute>}>
-          </Route>
-          <Route path="/items/edit/:id" element={<ProtectedRoute> 
+        </Route>
+        <Route path="/items/edit/:id" element={<ProtectedRoute>
           <EditItem />
         </ProtectedRoute>}>
-          </Route>
-          <Route path="/items/:id" element={<ProtectedRoute> 
+        </Route>
+        <Route path="/items/:id" element={<ProtectedRoute>
           <ItemDetails />
         </ProtectedRoute>}>
-          </Route>
-        <Route path="/additems" element={<ItemAdditionForm />} />
+        </Route>
+        <Route path="/About" element={<ProtectedRoute>
+          <About />
+        </ProtectedRoute>}>
+        </Route>
+        {/* <Route path="/additems" element={<ItemAdditionForm />} />
         <Route path="/addcomments" element={<CommentAdditionForm />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/items/edit/:id" element={<EditItem />} />
+        <Route path="/About" element={<About />} /> */}
+        {/* <Route path="/items/edit/:id" element={<EditItem />} />
         <Route path="/items/:id" element={<ItemDetails />} />
-        <Route path="/items" element={<Items />} />
+        <Route path="/items" element={<Items />} /> */}
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/PasswordUpdated" element={<PasswordUpdated />} />
         <Route path="/reset-password/:id/:token" element={<ChangePassword />} />
-        <Route path="/comments" element={<Comments />} />
+        {/* <Route path="/comments" element={<Comments />} /> */}
         <Route path="*" element={<NotFound />} />
-        
       </Routes>
-
     </div>
   );
 }

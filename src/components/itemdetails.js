@@ -2,12 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { API } from "./global"
+import { API } from "../global"
 import Counter from "./Counter"
 import Comments from "./comments"
 import CommentAdditionForm from "./addcomment";
 import Card from '@mui/material/Card';
-import "./App.css"
+import "../App.css"
 
 export default function ItemDetails() {
   const [token, setToken] = useState(localStorage.getItem("token"));

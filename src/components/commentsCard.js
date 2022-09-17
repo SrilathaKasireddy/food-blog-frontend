@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { API } from "./global"
-import "./App.css"
+import { API } from "../global"
+import "../App.css"
 export default function CommentCard({ UserName, Comment, _id, id, getCommentAPI }) {
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token"));

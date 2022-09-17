@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { API } from "./global"
+import { API } from "../global"
 
 export function ItemCard({ img, name, id, getItemAPI }) {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router-dom'
-import { API } from './global.js';
+import { API } from '../global.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 export function Register() {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import CommentCard from './commentsCard';
-import { API } from './global';
+import { API } from '../global';
 import { useNavigate } from "react-router-dom";
 
 

@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { API } from "./global";
+import { API } from "../global";
 import { Grid } from "@material-ui/core";
 import { useState } from "react";
 
