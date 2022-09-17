@@ -14,7 +14,7 @@ import { PasswordUpdated } from "./PasswordUpdated";
 import CommentAdditionForm from "./addcomment";
 import EditComment from "./editcomment";
 import NotFound from "./Notfound";
- import  ProtectedRoute from "./protectedRouter.js"
+ import  ProtectedRoute from "./ProtectedRoute"
 
 
 function App() {
