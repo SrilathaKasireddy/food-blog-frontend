@@ -9,34 +9,26 @@ import { API } from "./global";
 import { Grid, Typography } from "@material-ui/core";
 import Paper from '@mui/material/Paper';
 
-
-
-
 const formValidationSchema = yup.object({
   namee: yup.string().required("Item name is required"),
   imgg: yup.string().required("Please add image "),
-  ratingg: yup.number().required("Please add rating").max(10, "Provide rating from 1-10").min(1, "Provide rating from 1-10"),
   contentt: yup.string().required("Please add description").min(20, "Minimum 20 characters"),
-
 }
 );
 
-
-
 export default function EditItem() {
-
   const [item, setItem] = useState(null);
-  const [token,setToken]=useState(localStorage.getItem("token"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const { id } = useParams();
 
   function getItemAPI() {
-    fetch(`${API}/items/${id}`,{
+    fetch(`${API}/items/${id}`, {
       method: "GET",
       headers: {
         'Content-type': 'application/json',
-        'x-auth-token': `${token}`, 
-        
-    },
+        'x-auth-token': `${token}`,
+
+      },
     })
       .then((data) => data.json())
       .then((mvs) => setItem(mvs));
@@ -45,52 +37,34 @@ export default function EditItem() {
   useEffect(() => {
     getItemAPI();
   }, []);
-
-
-
-
-
-
   return (
     item ? <ItemEditCore item={item} /> : "Loading..."
   )
-
 }
-
-
-
 function ItemEditCore({ item }) {
-
-
-  const { handleBlur,
-     handleChange, handleSubmit, values, touched, errors } = useFormik({
-    initialValues: {
-      namee: item.namee,
-      imgg: item.imgg,
-      ratingg: item.ratingg,
-      contentt: item.contentt
-
-    },
-    validationSchema: formValidationSchema,
-    onSubmit: (values) => editItemAPI(item, values)
-  })
-
-
-
-
-
   const navigate = useNavigate();
-  const [token,setToken]=useState(localStorage.getItem("token"));
-  function editItemAPI(item, values) {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const { handleBlur,
+    handleChange, handleSubmit, values, touched, errors } = useFormik({
+      initialValues: {
+        namee: item.namee,
+        imgg: item.imgg,
+        contentt: item.contentt
 
+      },
+      validationSchema: formValidationSchema,
+      onSubmit: (values) => editItemAPI(item, values)
+    })
+
+  function editItemAPI(item, values) {
     fetch(`${API}/items/${item._id}`,
       {
         method: "PUT",
         body: JSON.stringify(values),
         headers: {
-           "Content-Type": "application/json" ,
-           'x-auth-token': `${token}`, 
-          }
+          "Content-Type": "application/json",
+          'x-auth-token': `${token}`,
+        }
       }
     ).then(() => navigate("/items"))
   }
@@ -122,19 +96,6 @@ function ItemEditCore({ item }) {
             onChange={handleChange}
             onBlur={handleBlur}
             helperText={touched.imgg && errors.imgg} />
-          <br></br>
-
-          <TextField
-            error={touched.ratingg && errors.ratingg}
-            style={{ padding: "2%" }}
-            label="Rating"
-            variant="filled"
-            className="rating input"
-            name="ratingg"
-            value={values.ratingg}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            helperText={touched.ratingg && errors.ratingg} />
           <br></br>
           <TextField
             error={touched.contentt && errors.contentt}

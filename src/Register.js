@@ -53,9 +53,9 @@ export function Register() {
   });
 
   return <div className="add-user-container">
-    <Paper elevation={10} style={{ height: 600, margin: 40, backgroundColor: "#DEF7EA" }}>
-      <Grid container direction="column" alignItems="center" justify="center">
-        <form onSubmit={handleSubmit} style={{ padding: "5%" }} >
+     <>
+ <Grid container direction="row" alignItems="center" justify="center" style={{minHeight:"100vh",backgroundColor: "#F7F9F8"}} >
+      <form onSubmit={handleSubmit} style={{ padding: "3%" ,margin:50,backgroundColor: "#DEF7EA"}}  >
           <TextField
             className="add-user-name"
             label="User Name"
@@ -68,7 +68,7 @@ export function Register() {
             onBlur={handleBlur}
             error={touched.UserName && errors.UserName ? true : false}
             style={{ padding: 5 }}
-            variant="filled"
+            variant="standard"
             helperText={touched.UserName && errors.UserName ? errors.UserName : ""}
           />
           <br></br>
@@ -78,7 +78,7 @@ export function Register() {
             InputLabelProps={{ style: { fontSize: 15 } }}
             label="Email ID"
             type="Email"
-            variant="filled"
+            variant="standard"
             value={values.Email}
             name="Email"
             onChange={handleChange}
@@ -95,7 +95,7 @@ export function Register() {
             label="Password"
             style={{ padding: 5 }}
             type="password"
-            variant="filled"
+            variant="standard"
             value={values.Password}
             name="Password"
             onChange={handleChange}
@@ -119,11 +119,8 @@ export function Register() {
             <Link to="/ForgetPassword"><button type="submit"
               className="btn btn-success" style={{ height: 40, width: 200, fontSize: 15 }}>Forgotten your password?</button></Link>
           </div>
-
         </form>
       </Grid>
-    </Paper>
-
+    </>
   </div>;
 }
-

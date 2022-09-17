@@ -1,17 +1,13 @@
-import { Typography, Button, } from '@mui/material'
 import "./App.scss";
 import { Grid } from "@material-ui/core";
 import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from "yup";
-import Card from "@mui/material/Card"
 import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router-dom'
 import { API } from './global.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Paper from '@mui/material/Paper';
-
 
 export default function Login() {
  const navigate = useNavigate();
@@ -57,16 +53,11 @@ export default function Login() {
    loginUser(userDetail);
   },
  });
-
  return (
-  <Paper elevation={10} style={{ height: 700, width: "100%", backgroundColor: "#B2ECCF" }}>
-   <Grid container direction="column" alignItems="center" justify="center"
-    style={{ backgroundColor: "#DEF7EA", height: 700, width: "60%", padding: "10%" }}
-
-   >
-    <form onSubmit={handleSubmit}  >
-
-
+  <>
+ <Grid container direction="row" alignItems="center" justify="center" style={{ backgroundColor: "#F7F9F8"}} >
+      <form onSubmit={handleSubmit} style={{ padding: "5%" ,margin:50,backgroundColor: "#DEF7EA"}}  >
+    
      <TextField
       className="username"
       InputProps={{ style: { fontSize: 15 } }}
@@ -119,6 +110,9 @@ export default function Login() {
 
     </form>
     <div  className="example">
+    <h1> <span className="wave">👋</span>Welcome!</h1>
+    
+<h6 style={{width: '50%',margin:"auto"}}>   Simply Recipies is a food blog.</h6>
      <div className="content" >
       <div className="broccoli">
        <div className="broccoliTop">
@@ -138,10 +132,7 @@ export default function Login() {
         <span></span>
         <span></span>
         <span></span>
-
-
        </div>
-
        <div className="broccoliTale">
         <span></span>
         <span></span>
@@ -155,10 +146,8 @@ export default function Login() {
       </div>
      </div>
     </div>
- <h1> <span className="wave">👋</span>Welcome!</h1>
-<h5>   Simply Recipies is a food blog.</h5>
    </Grid>
-  </Paper>
+   <h6 style={{textAlign: 'center'}} >Made With ❤️ By Srilatha Kasireddy</h6>
+   </>
  );
 }
-

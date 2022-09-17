@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import * as React from 'react';
 import CoffeeIcon from '@mui/icons-material/Coffee';
@@ -14,27 +13,17 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import IcecreamSharpIcon from '@mui/icons-material/IcecreamSharp';
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import CommentAdditionForm from "./addcomment"
+import { useState } from 'react';
+
 
 export default function Home() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const navigate = useNavigate();
-
-
   const logout = () => {
     localStorage.removeItem('token');
     navigate('/');
   }
-
-
-
-
-
-
   return (
-
-
     <div className="App">
       <header className="App-header">
         <Navbar expand="lg">
@@ -43,7 +32,6 @@ export default function Home() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="dropdown"  >
-
                 <NavDropdown title="Recipies" className="hover-underline-animation">
                   <NavDropdown.Item href="/items" >Breakfast</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
@@ -58,41 +46,23 @@ export default function Home() {
                   <NavDropdown.Item href="#action/3.3">Easy Pastas </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Easy Chicken</NavDropdown.Item>
                 </NavDropdown>
-                {/* <NavDropdown title="Cuisines" id="nav-dropdown" className="hover-underline-animation">
-         <NavDropdown.Item href="#action/3.1">Indian</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.2">Mexican</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">Japaneese</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">Chineese</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">American</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">French</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">Italian</NavDropdown.Item>
-         <NavDropdown.Item href="#action/3.3">British</NavDropdown.Item>
-        </NavDropdown> */}
                 <Nav.Link href="/About">About Us</Nav.Link>
-                <Button style={{ backgroundColor: "#277970",
-   color:"white",marginLeft:"700px"}} variant="outlined"  onClick={() => logout()}>Logout</Button>
-                {/* <Nav.Link href="/">Logout</Nav.Link> */}
-
-
               </Nav>
             </Navbar.Collapse>
+            <Button className="logout" style={{
+              backgroundColor: "#277970",
+              color: "white",
+
+            }} variant="Success" onClick={() => logout()}>Logout</Button>
           </Container>
         </Navbar>
-
       </header>
       <hr style={{ color: "#DFBA21" }}></hr>
-
-
       <div style={{ backgroundColor: "#caf6f2", width: "50%", textAlign: "center", marginLeft: "5%", borderRadius: "5px" }}>
-
         <h3 style={{ color: "green", textAlign: "center" }}>Less stress &  <CoffeeIcon style={{ color: "#277970" }} />MORE JOY </h3>
         <Card style={{ backgroundColor: "#caf6f2" }} >
-
-
-
           <img width="60%" height="300" alt="home" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/2022-04-29-tcu-s3-rx011-aussie-italian-adam-liaw-classic-margherita-pizza-l_50.jpg">
           </img>
-
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               Margherita Pizza
@@ -105,19 +75,12 @@ export default function Home() {
               pizza gets its name after the Queen of the Italy of the
               same name who ruled in the late 1800s ‘Margherita di Savoia’.
               The name is pronounced: mahr-geh-ree-tah.
-
-
             </Typography>
           </CardContent>
           <CardActions>
-            {/* <Button variant="success" size="small">Share</Button>
-      <Button size="success">Learn More</Button> */}
           </CardActions>
         </Card>
       </div>
-
     </div>
-
-
   )
 }

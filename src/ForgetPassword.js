@@ -44,9 +44,10 @@ export function ForgetPassword() {
  {color:"green"}:{color:"red"}
  
  return <div className="usercontainer">
-   <Paper elevation={10} style={{ height: 600, margin: 40, backgroundColor: "#DEF7EA" }}>
-      <Grid container direction="column" alignItems="center" justify="center">
-        <form onSubmit={handleSubmit} style={{ padding: "5%" }} >
+    
+ <Grid container direction="row" alignItems="center" justify="center"
+  style={{ backgroundColor: "#F7F9F8",minHeight: "100vh"}} >
+      <form onSubmit={handleSubmit} style={{ padding: "3%" ,margin:50,backgroundColor: "#DEF7EA"}}  >
    
    
  <TextField
@@ -62,7 +63,7 @@ export function ForgetPassword() {
    onBlur={handleBlur}
    error={touched.Email&&errors.Email?true:false}
    helperText={touched.Email&&errors.Email?errors.Email:""}
-   variant="filled"
+   variant="standard"
    />
    <br></br>
    <br></br>
@@ -85,7 +86,7 @@ export function ForgetPassword() {
  </div>
 </form> 
 </Grid>
-    </Paper>
+   
 </div>;
 
 }

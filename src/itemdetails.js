@@ -3,16 +3,12 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { API } from "./global"
-import ShareIcon from '@mui/icons-material/Share';
-import CommentIcon from '@mui/icons-material/Comment';
 import Counter from "./Counter"
-
 import Comments from "./comments"
 import CommentAdditionForm from "./addcomment";
-
-
 import Card from '@mui/material/Card';
 import "./App.css"
+
 export default function ItemDetails() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const { id } = useParams();
@@ -36,19 +32,14 @@ export default function ItemDetails() {
 
   return (
     <div>
-
       <div id="boxes" style={{
         backgroundColor: "#F1F7F6"
       }}>
-
-        <Button onClick={() => {
+        <Button style={{ backgroundColor: "#277970", margin: 10, color: "white", fontSize: 15 }} variant="outlined" onClick={() => {
           return navigate(-1);
-        }} style={{ marginLeft: "90%", color: "green", margin: "10px" }}>
-          <ArrowBackIosNewIcon />Back</Button>
-
-
+        }}
+        > <ArrowBackIosNewIcon fontSize="15" />Back</Button>
         <h1>{item.namee} Recipe</h1>
-
         <div id="leftbox">
           <img style={{
             width: '100%', height: 400,
@@ -56,11 +47,11 @@ export default function ItemDetails() {
           }}
             className="itemImage" src={item.imgg}
             alt={item.namee} />
-             <Counter/>
+          <Counter />
           <div className="itemDescription">{item.contentt}</div>
 
         </div>
-       
+
         <Card style={{
           width: '60%', padding: '30px',
           margin: '30px', backgroundColor: "#caf6f2"
@@ -75,23 +66,9 @@ export default function ItemDetails() {
           <h4 >Method</h4>
           <p>{item.method}</p>
         </Card>
-
-
-
-
-        {/* <h4>Loved  the Recipe!<Button style={{ backgroundColor: "green", color: "white", }}
-        variant="outlined"><ShareIcon />Share </Button></h4> */}
-
-
-
-
-
       </div>
-
-
       <CommentAdditionForm />
       <Comments />
-
     </div>
   )
 }

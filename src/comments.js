@@ -1,69 +1,45 @@
-import { useEffect ,useState} from 'react';
+import { useEffect, useState } from 'react';
 import CommentCard from './commentsCard';
-
 import { API } from './global';
-import Button from 'react-bootstrap/Button';
-import {useNavigate} from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
-import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from "react-router-dom";
 
-
- 
 
 export default function Comments() {
   const navigate = useNavigate();
-  
-  const[commentInfo,setcommentInfo]=useState([]);
-  
-  // const [token,setToken]=useState(localStorage.getComment("token"));
-  
-  function getCommentAPI(){
+  const [commentInfo, setcommentInfo] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  function getCommentAPI() {
     fetch(`${API}/comments`, {
       method: "GET",
       headers: {
         'Content-type': 'application/json',
-        // 'x-auth-token': `${token}`, 
-        
-    },
+        'x-auth-token': `${token}`,
+
+      },
     })
-    .then((data)=>data.json())
-    .then((mvs)=>setcommentInfo(mvs))
-    
+      .then((data) => data.json())
+      .then((mvs) => setcommentInfo(mvs))
+
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getCommentAPI();
-  },[]);
-  
-  return (
+  }, []);
 
-   <div id ="heading-comment" >
-   
-   
-   
-    {/* <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
-          return navigate("/addcomments");
-        }}
-        >  <AddIcon/>AddComment</Button>  */}
-  
-   
-   
-   
-    <div  className="commentsList" >
-    
-      {commentInfo.map((value, index) => {
-        return <CommentCard key={value._id} 
-        id={value._id} 
-        UserName={value.UserName} Comment={value.Comment}
-        commentInfo={commentInfo} 
-                          setcommentInfo={setcommentInfo} 
-                          getCommentAPI = {getCommentAPI} />;
-      })}
-      
+  return (
+    <div id="heading-comment" >
+      <h4 >Comments</h4>
+      <div className="commentsList" >
+        {commentInfo.map((value, index) => {
+          return <CommentCard key={value._id}
+            id={value._id}
+            UserName={value.UserName} Comment={value.Comment}
+            commentInfo={commentInfo}
+            setcommentInfo={setcommentInfo}
+            getCommentAPI={getCommentAPI} />;
+        })}
+
+      </div>
     </div>
-    </div>
-    
-   
-    
   );
 }

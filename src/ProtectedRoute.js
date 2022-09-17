@@ -12,5 +12,3 @@ if (!token) {
 };
 
 export default ProtectedRoute;
-
-
