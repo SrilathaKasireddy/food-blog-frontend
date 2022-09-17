@@ -51,7 +51,7 @@ export default function CommentAdditionForm() {
       onChange={handleChange}
       onBlur={handleBlur}
       helperText={touched.UserName && errors.UserName} /> */}
-        <br></br>
+         <br/>
 
         <TextField
           error={touched.Comment && errors.Comment}

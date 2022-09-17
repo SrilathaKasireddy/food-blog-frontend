@@ -111,7 +111,7 @@ export default function Login() {
             error={touched.UserName && errors.UserName ? true : false}
             helperText={touched.UserName && errors.UserName ? errors.UserName : ""}
           />
-          <br></br>
+          <br />
 
           <TextField
             InputProps={{ style: { fontSize: 15 } }}
@@ -128,20 +128,20 @@ export default function Login() {
             error={touched.Password && errors.Password ? true : false}
             helperText={touched.Password && errors.Password ? errors.Password : ""}
           />
-          <br></br>
-          <br></br>
+           <br/>
+           <br/>
           <button type="submit"
             className="btn btn-success" style={{ height: 40, width: 60, fontSize: 15 }}>Login</button>
-          <br></br>
-          <br></br>
+           <br/>
+           <br/>
           <div className="text-center" style={{ color: "red" }}>
             {errorMsg}
           </div>
           <div className="text-center" style={{ color: "", padding: 5 }} >
             <h4>Don't have an account? <Link to="/Register"><button type="submit"
               className="btn btn-success" style={{ height: 40, width: 65, fontSize: 15 }}>Signup</button></Link></h4>
-            <br></br>
-            <br></br>
+             <br/>
+             <br/>
             <Link to="/ForgetPassword"><button type="submit"
               className="btn btn-success" style={{ height: 40, width: 200, fontSize: 15 }}>Forgotten your password?</button></Link>
           </div>

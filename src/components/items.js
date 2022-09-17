@@ -61,7 +61,7 @@ export default function Items() {
   const navigate = useNavigate();
   return (
     <>
-      <div id="heading-item" ><br></br><b id="breakfast">
+      <div id="heading-item" > <br/><b id="breakfast">
         Indian Breakfasts </b>
         <Button style={{
           backgroundColor: "#277970",

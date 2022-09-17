@@ -8,7 +8,7 @@ import { Card } from "@mui/material";
 import { API } from "../global";
 import { Grid, Typography } from "@material-ui/core";
 import Paper from '@mui/material/Paper';
-import React  from 'react';
+import React from 'react';
 
 const formValidationSchema = yup.object({
   namee: yup.string().required("Item name is required"),
@@ -84,7 +84,7 @@ function ItemEditCore({ item }) {
             onBlur={handleBlur}
             style={{ padding: "2%" }}
             helperText={touched.namee && errors.namee} />
-          <br></br>
+          <br />
 
           <TextField
 
@@ -97,7 +97,7 @@ function ItemEditCore({ item }) {
             onChange={handleChange}
             onBlur={handleBlur}
             helperText={touched.imgg && errors.imgg} />
-          <br></br>
+          <br />
           <TextField
             error={touched.contentt && errors.contentt}
             style={{ margin: "2%" }}
@@ -110,8 +110,8 @@ function ItemEditCore({ item }) {
             onBlur={handleBlur}
             helperText={touched.contentt && errors.contentt} />
 
-          <br></br>
-          <br></br>
+          <br />
+          <br />
 
           <Button style={{ backgroundColor: "#277970", color: "white" }}
             variant="filled" type="submit"

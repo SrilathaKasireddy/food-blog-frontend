@@ -2,7 +2,6 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from "yup";
 import { Grid } from "@material-ui/core";
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router-dom'
 import { API } from '../global.js';
@@ -71,7 +70,7 @@ export function Register() {
             variant="standard"
             helperText={touched.UserName && errors.UserName ? errors.UserName : ""}
           />
-          <br></br>
+           <br/>
           <TextField
             className="add-user-name"
             InputProps={{ style: { fontSize: 15 } }}
@@ -87,7 +86,7 @@ export function Register() {
             style={{ padding: 5 }}
             helperText={touched.Email && errors.Email ? errors.Email : ""}
           />
-          <br></br>
+           <br/>
           <TextField
             className="add-user-name"
             InputProps={{ style: { fontSize: 15 } }}
@@ -103,8 +102,8 @@ export function Register() {
             error={touched.Password && errors.Password ? true : false}
             helperText={touched.Password && errors.Password ? errors.Password : ""}
           />
-          <br></br>
-          <br></br>
+           <br/>
+           <br/>
           <button type="submit"
             className="btn btn-success" style={{ height: 40, width: 65, fontSize: 15 }}>Signup</button>
           <div className="text-center" style={{ color: "red" }}>

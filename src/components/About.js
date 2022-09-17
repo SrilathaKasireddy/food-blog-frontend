@@ -19,7 +19,7 @@ export default function About() {
         <h1>Diversity & Inclusion</h1>
         Everyone is welcome at the Simply Recipes table: people of all races, religions, genders, sexual orientations, ages, backgrounds, and abilities. We strive to be a resource for every home cook, and we consciously work to make this inclusion felt in every part of the site, from the individuals we hire to the recipes we share.
       </p>
-      <br></br>
+      <br/>
       <Button style={{ backgroundColor: "#277970", color: "white", fontSize: 15 }} variant="outlined" onClick={() => {
         return navigate(-1);
       }}

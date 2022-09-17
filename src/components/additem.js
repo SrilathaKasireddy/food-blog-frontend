@@ -53,7 +53,7 @@ export default function ItemAdditionForm() {
       onBlur={handleBlur}
       style={{ padding: "2%" }}
       helperText={touched.namee && errors.namee} />
-     <br></br>
+      <br/>
      <TextField
       error={touched.imgg && errors.imgg}
       style={{ padding: "2%" }}
@@ -64,7 +64,7 @@ export default function ItemAdditionForm() {
       onChange={handleChange}
       onBlur={handleBlur}
       helperText={touched.imgg && errors.imgg} />
-     <br></br>
+      <br/>
      <TextField
       error={touched.contentt && errors.contentt}
       style={{ margin: "2%" }}
@@ -76,8 +76,8 @@ export default function ItemAdditionForm() {
       onChange={handleChange}
       onBlur={handleBlur}
       helperText={touched.contentt && errors.contentt} />
-     <br></br>
-     <br></br>
+      <br/>
+      <br/>
      <Button style={{ backgroundColor: "#277970", color: "white" }}
       variant="filled" type="submit"
      >Add Item</Button>
