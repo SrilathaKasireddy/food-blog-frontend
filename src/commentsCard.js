@@ -8,13 +8,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { API } from "./global"
 import "./App.css"
-export default  function CommentCard
-({ UserName, Comment,_id, id, getCommentAPI }) {
-
-  
-  const navigate = useNavigate();
-  const [token, setToken] = 
-  useState(localStorage.getItem("token"));
+export default  function CommentCard({ UserName, Comment,_id, id, getCommentAPI }) {
+const navigate = useNavigate();
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
   // let token = localStorage.getItem('token')
 const parseJwt = (token) => {
@@ -54,7 +50,7 @@ if (token)
                 method: "DELETE",
                 headers: {
                   'Content-type': 'application/json',
-                  // 'x-auth-token': `${token}`,
+                  'x-auth-token': `${token}`,
 
                 },
               })

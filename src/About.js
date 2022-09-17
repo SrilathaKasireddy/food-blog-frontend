@@ -32,10 +32,7 @@ Everyone is welcome at the Simply Recipes table: people of all races, religions,
 
 
 
-<h1>Comments</h1>
-We review and approve every comment left on the site, and generally
- respond to questions within 1 to 3 days. When leaving comments, 
- we ask that you think of Simply Recipes as our home.</p>
+</p>
   <br></br>
 
 <Button style={{ backgroundColor: "#277970",color:"white",fontSize:20}} variant="outlined"  onClick={() => {

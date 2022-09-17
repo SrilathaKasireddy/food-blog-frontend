@@ -11,8 +11,10 @@ import AddIcon from '@mui/icons-material/Add';
  
 
 export default function Comments() {
+  const navigate = useNavigate();
   
   const[commentInfo,setcommentInfo]=useState([]);
+  
   // const [token,setToken]=useState(localStorage.getComment("token"));
   
   function getCommentAPI(){
@@ -32,17 +34,17 @@ export default function Comments() {
   useEffect(()=>{
     getCommentAPI();
   },[]);
-  const navigate = useNavigate();
+  
   return (
 
    <div id ="heading-comment" >
    
    
    
-   {/* <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
+    {/* <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
           return navigate("/addcomments");
         }}
-        >  <AddIcon/>AddComment</Button> */}
+        >  <AddIcon/>AddComment</Button>  */}
   
    
    
