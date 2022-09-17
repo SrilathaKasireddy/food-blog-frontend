@@ -15,6 +15,7 @@ import CommentAdditionForm from "./addcomment";
 import EditComment from"./editcomment";
 import Search from "./Search";
 import NotFound from "./Notfound";
+import ProtectedRoute from "./ProtectedRoute"
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
       <Routes>
         <Route path="/"
           element={<Login />} />
+          <Route path="/items" element={<ProtectedRoute> 
+          <Items />
+        </ProtectedRoute>}>
+          </Route>
 
         <Route path="/additems" element={<ItemAdditionForm />} />
         <Route path="/addcomments" element={<CommentAdditionForm />} />

@@ -13,9 +13,18 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import IcecreamSharpIcon from '@mui/icons-material/IcecreamSharp';
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import {useState } from "react"
 export default function Home() {
   const navigate = useNavigate();
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  }
+
 
 
  return (
@@ -56,8 +65,10 @@ export default function Home() {
          <NavDropdown.Item href="#action/3.3">British</NavDropdown.Item>
         </NavDropdown> */}
          <Nav.Link href="/About">About Us</Nav.Link>
+         <Button style={{ backgroundColor: "#277970",
+   color:"white",marginLeft:"700px"}} variant="outlined"  onClick={() => logout()}>Logout</Button>
        </Nav>
-       <Form className="d-flex" style={{ marginLeft: "auto" }}>
+       {/* <Form className="d-flex" style={{ marginLeft: "auto" }}>
         <Form.Control
          type="search"
          placeholder="Search...."
@@ -67,7 +78,7 @@ export default function Home() {
         <Button  onClick={() => {
                   navigate("/search");
                 }} variant="outline-success">Search</Button>
-       </Form>
+       </Form> */}
       </Navbar.Collapse>
      </Container>
     </Navbar>

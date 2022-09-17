@@ -1,49 +1,94 @@
-import { useEffect ,useState} from 'react';
+import { useEffect, useState } from 'react';
 import { ItemCard } from './itemcard';
 import { API } from './global';
 import Button from 'react-bootstrap/Button';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import AddIcon from '@mui/icons-material/Add';
 import Form from 'react-bootstrap/Form';
-import Search from "./Search"
-
-
-
- 
+import Card from '@mui/material/Card';
 
 export default function Items() {
-  
-  const[itemInfo,setitemInfo]=useState([]);
-  const [token,setToken]=useState(localStorage.getItem("token"));
 
-  function getItemAPI(){
+  const [itemInfo, setitemInfo] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  // const[itemInfo,setitemInfo]=useState([]);
+  //   const [token,setToken]=useState(localStorage.getItem("token"));
+
+  function getItemAPI() {
     fetch(`${API}/items`, {
       method: "GET",
       headers: {
         'Content-type': 'application/json',
-        'x-auth-token': `${token}`, 
-        
-    },
+        'x-auth-token': `${token}`,
+
+      },
     })
-    .then((data)=>data.json())
-    .then((mvs)=>setitemInfo(mvs))
-    
+      .then((data) => data.json())
+      .then((mvs) => setitemInfo(mvs))
+
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getItemAPI();
-  },[]);
+  }, []);
+  // the value of the search field 
+  const [item, setItem] = useState('');
+
+
+  // the search result
+  const [foundItems, setFoundItems] = useState(itemInfo);
+
+  const filter = (e) => {
+    const keyword = e.target.value;
+
+    if (keyword !== '') {
+
+      const results = itemInfo.filter((item) => {
+        return item.namee.toString()
+          .toLowerCase()
+          .indexOf(keyword.toLowerCase()) > -1
+
+        // return item.namee.toLowerCase().startsWith(keyword.toLowerCase());
+        // Use the toLowerCase() method to make it case-insensitive
+      });
+      setFoundItems(results);
+    } else {
+      setFoundItems();
+      // If the text field is empty, show all users
+    }
+
+    setItem(keyword);
+  };
+
+
+  function getItemAPI() {
+    fetch(`${API}/items`, {
+      
+      method: "GET",
+      headers: {
+        'Content-type': 'application/json',
+        'x-auth-token': `${token}`,
+
+      },
+    })
+      .then((data) => data.json())
+      .then((mvs) => setitemInfo(mvs))
+      
+      
+
+  }
+
+  useEffect(() => {
+    getItemAPI();
+  }, []);
   const navigate = useNavigate();
   return (
 
-   <div id ="heading-item" ><br></br><b id = "breakfast">
-    Indian Breakfasts </b>
-
-    
-    
-   
-   <Button style={{ backgroundColor: "#277970",
+    <>
+      <div id="heading-item" ><br></br><b id="breakfast">
+        Indian Breakfasts </b>
+        <Button style={{ backgroundColor: "#277970",
    color:"white",marginRight:"auto"}} variant="outlined" 
   onClick={() => {
           return navigate("/home");
@@ -52,42 +97,74 @@ export default function Items() {
        
        
    
-   <Button style={{ backgroundColor: "#277970",color:"white",margin:10}} variant="outlined"  onClick={() => {
+   
+       <Button style={{ backgroundColor: "#277970",color:"white",
+          margin:10}} variant="outlined"  onClick={() => {
           return navigate("/additems");
         }}
         >  <AddIcon/>AddItem</Button>
-  
-   {/* <Form className="d-flex" style={{ marginRight: "80%" }}>
-        <Form.Control
-         type="search"
-         placeholder="Search...."
-         className="me-2"
-         aria-label="Search"
+
+        <input
+          type="search"
+          value={item}
+          onChange={filter}
+          className="input"
+          placeholder="Search..."
+          style={{ marginRight:"80%", width: "250px", height:40,
+           border: "3px solid green" }}
         />
-        <Button style={{ backgroundColor: "#277970",
-   color:"white"}} variant="outlined" 
-  onClick={() => {
-          return navigate("/items/search");
-        }}
-        > Search</Button>
-       </Form>  */}
-       
-    <div  className="itemsList" >
-    
-      {itemInfo.map((value, index) => {
-        return <ItemCard key={value._id} id={value._id} 
-        img={value.imgg} name={value.namee} rating={value.ratingg} 
-                          // content={value.contentt} 
-                          method={value.method}
-                          itminf={itemInfo} 
-                          setitemInfo={setitemInfo} 
-                          getItemAPI = {getItemAPI} />;
-      })}
+        
+
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          {foundItems && foundItems.length > 0 ? (
+            foundItems.map((item) => (
+              <ItemCard key={item._id} id={item._id}
+                img={item.imgg} name={item.namee} rating={item.ratingg}
+                // content={value.contentt} 
+                method={item.method}
+                itminf={itemInfo}
+                setitemInfo={setitemInfo}
+                getItemAPI={getItemAPI} />
+            ))
+          ) : (
+            <h1> </h1>
+          )}
+
+        
+          
+
+        
+
+
+          
       
-    </div>
-    </div>
-    
-   
-    
+
+
+          
+        </div>
+
+      </div>
+
+
+
+      <div className="itemsList" id="heading-item" >
+
+        {itemInfo.map((value, index) => {
+          return <ItemCard key={value._id} id={value._id}
+            img={value.imgg} name={value.namee} rating={value.ratingg}
+            // content={value.contentt} 
+            method={value.method}
+            itminf={itemInfo}
+            setitemInfo={setitemInfo}
+            getItemAPI={getItemAPI} />;
+        })}
+
+      </div>
+
+      {/* </div> */}
+    </>
+
+
+
   );
 }
