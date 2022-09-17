@@ -27,7 +27,8 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "@svgr/webpack": "^6.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
