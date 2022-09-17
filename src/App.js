@@ -13,7 +13,8 @@ import { ChangePassword } from "./components/ChangePassword";
 import { PasswordUpdated } from "./components/PasswordUpdated";
 import CommentAdditionForm from "./components/addcomment";
 import NotFound from "./components/Notfound";
-import ProtectedRoute from "./components/ProtectedRoute"
+import ProtectedRoute from "./components/ProtectedRoute";
+import React  from 'react';
 
 
 function App() {

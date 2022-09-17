@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import CommentCard from './commentsCard';
 import { API } from '../global';
 import { useNavigate } from "react-router-dom";
+import React  from 'react';
 
 
 export default function Comments() {

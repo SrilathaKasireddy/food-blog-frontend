@@ -1,6 +1,7 @@
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Button from 'react-bootstrap/Button';
+import React  from 'react';
 import { useNavigate } from "react-router-dom";
 export default function About() {
   const navigate = useNavigate();

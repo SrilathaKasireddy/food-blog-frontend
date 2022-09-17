@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { API } from "../global"
+import React  from 'react';
 import "../App.css"
 export default function CommentCard({ UserName, Comment, _id, id, getCommentAPI }) {
   const navigate = useNavigate();

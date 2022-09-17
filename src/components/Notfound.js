@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import {useNavigate} from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
+import React  from 'react';
 export default function Notfound(){
  const navigate = useNavigate();
 

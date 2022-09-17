@@ -8,6 +8,7 @@ import Comments from "./comments"
 import CommentAdditionForm from "./addcomment";
 import Card from '@mui/material/Card';
 import "../App.css"
+import React  from 'react';
 
 export default function ItemDetails() {
   const [token, setToken] = useState(localStorage.getItem("token"));
