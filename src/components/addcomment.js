@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { API } from "../global";
 import { Grid } from "@material-ui/core";
 import { useState } from "react";
-import React  from 'react';
+import React from 'react';
 import CommentCard from "../components/commentsCard"
 
 const formValidationSchema = yup.object({
@@ -15,7 +15,7 @@ const formValidationSchema = yup.object({
 }
 );
 export default function CommentAdditionForm() {
-    
+
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token"));
   const parseJwt = (token) => {
@@ -27,19 +27,18 @@ export default function CommentAdditionForm() {
   };
   console.log(token)
   if (token)
-     var Username = parseJwt(token).UserName
-  
+    var Username = parseJwt(token).UserName
+
   const { handleBlur, handleChange, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
-       UserName:Username,
+      UserName: Username,
       Comment: "",
     },
     validationSchema: formValidationSchema,
     onSubmit: (values) => AddCommentAPI(values)
   })
-  
+
   function AddCommentAPI(newComment) {
-    console.log(newComment,'opiu')
     fetch(`${API}/comments`,
       {
         method: "POST",
@@ -49,13 +48,15 @@ export default function CommentAdditionForm() {
           "x-auth-token": `${token}`
         }
       }
-    ).then(() => navigate(``))
+    )
+      // .then(() => navigate("/items"))
+      .then(() => window.location.reload())
   }
   return (
     <Grid container direction="column" alignItems="center" justify="center">
       <form onSubmit={handleSubmit} style={{ padding: "5%" }} >
-        <h1>Leave a Comment </h1> 
-         <br/>
+        <h1>Leave a Comment </h1>
+        <br />
         <TextField
           error={touched.Comment && errors.Comment}
 
@@ -68,7 +69,8 @@ export default function CommentAdditionForm() {
           onBlur={handleBlur}
           helperText={touched.Comment && errors.Comment} />
         <Button style={{ backgroundColor: "#277970", color: "white", margin: 10 }}
-          onClick={() => window.location.reload(false)} variant="filled" type="submit"
+
+          variant="filled" type="submit"
 
         >  Add Comment</Button>
       </form>
