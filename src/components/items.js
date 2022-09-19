@@ -101,11 +101,7 @@ export default function Items() {
                 getItemAPI={getItemAPI} />
             ))
           ) : (
-            <h1> </h1>
-          )}
-        </div>
-      </div>
-      <div className="itemsList" id="heading-item" >
+             <div className="itemsList" id="heading-item" >
         {itemInfo.map((value, index) => {
           return <ItemCard key={value._id} id={value._id}
             img={value.imgg} name={value.namee}
@@ -115,6 +111,9 @@ export default function Items() {
             setitemInfo={setitemInfo}
             getItemAPI={getItemAPI} />;
         })}
+      </div> 
+          )}
+        </div>
       </div>
     </>
   );

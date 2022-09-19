@@ -4,31 +4,19 @@ import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { API } from "../global"
-import React  from 'react';
+import React from 'react';
 import "../App.css"
-export default function CommentCard({ UserName, Comment, _id, id, getCommentAPI }) {
+export default function CommentCard({ UserName,
+  Comment, commentInfo, _id, id, getCommentAPI }) {
   const navigate = useNavigate();
+
   const [token, setToken] = useState(localStorage.getItem("token"));
-
-  // let token = localStorage.getItem('token')
-  const parseJwt = (token) => {
-    try {
-      return JSON.parse(atob(token.split('.')[1]));
-    } catch (e) {
-      return null;
-    }
-  };
-  console.log(token)
-  if (token)
-    var Username = parseJwt(token).UserName
-  console.log(Username)
-
   return (
     <div id="containermain">
       <Card style={{ backgroundColor: "whitesmoke", textAlign: "center", justifyContent: "center" }}>
         <div className="Credentials">
           <span>PostedBy  </span> <span style={{ color: "green", backgroundColor: "white" }}>
-            {Username}</span>
+            {`${UserName}`}</span>
           <div id="comment">{`${Comment}`}
             <IconButton
               aria-label="Item Delete"

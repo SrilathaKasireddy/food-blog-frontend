@@ -26,12 +26,13 @@ export default function Comments() {
   useEffect(() => {
     getCommentAPI();
   }, []);
-
+// {console.log(commentInfo,"poooo")}
   return (
     <div id="heading-comment" >
       <h4 >Comments</h4>
       <div className="commentsList" >
         {commentInfo.map((value, index) => {
+          console.log(value,'value')
           return <CommentCard key={value._id}
             id={value._id}
             UserName={value.UserName} Comment={value.Comment}

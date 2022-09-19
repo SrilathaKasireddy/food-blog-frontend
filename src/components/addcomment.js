@@ -7,24 +7,39 @@ import { API } from "../global";
 import { Grid } from "@material-ui/core";
 import { useState } from "react";
 import React  from 'react';
+import CommentCard from "../components/commentsCard"
 
 const formValidationSchema = yup.object({
-  //  UserName: yup.string().required("Please add name"),
+  //  UserName: yup.string(),
   Comment: yup.string().required("Please add comment"),
 }
 );
 export default function CommentAdditionForm() {
+    
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const parseJwt = (token) => {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      return null;
+    }
+  };
+  console.log(token)
+  if (token)
+     var Username = parseJwt(token).UserName
+  
   const { handleBlur, handleChange, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
-      //  UserName:"",
+       UserName:Username,
       Comment: "",
     },
     validationSchema: formValidationSchema,
     onSubmit: (values) => AddCommentAPI(values)
   })
+  
   function AddCommentAPI(newComment) {
+    console.log(newComment,'opiu')
     fetch(`${API}/comments`,
       {
         method: "POST",
@@ -34,25 +49,13 @@ export default function CommentAdditionForm() {
           "x-auth-token": `${token}`
         }
       }
-    ).then(() => navigate("/items"))
+    ).then(() => navigate(``))
   }
   return (
     <Grid container direction="column" alignItems="center" justify="center">
       <form onSubmit={handleSubmit} style={{ padding: "5%" }} >
-        <h1>Leave a Comment</h1>
-        {/* <TextField
-      error={touched.UserName && errors.UserName}
-      style={{ padding: "2%" }}
-      label="UserName"
-      variant="filled"
-      className="username input"
-      name="UserName"
-      value={values.UserName}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      helperText={touched.UserName && errors.UserName} /> */}
+        <h1>Leave a Comment </h1> 
          <br/>
-
         <TextField
           error={touched.Comment && errors.Comment}
 
@@ -65,7 +68,7 @@ export default function CommentAdditionForm() {
           onBlur={handleBlur}
           helperText={touched.Comment && errors.Comment} />
         <Button style={{ backgroundColor: "#277970", color: "white", margin: 10 }}
-          variant="filled" type="submit"
+          onClick={() => window.location.reload(false)} variant="filled" type="submit"
 
         >  Add Comment</Button>
       </form>

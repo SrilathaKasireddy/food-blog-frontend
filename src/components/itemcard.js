@@ -14,7 +14,10 @@ export function ItemCard({ img, name, id, getItemAPI }) {
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <div id="container-main" style={{ display: "flex", flexWrap: "wrap" }}>
-      <Card style={{ margin: 10, width: 350, backgroundColor: "#E7FFF2", display: "flex", flexWrap: "wrap", textAlign: "center", justifyContent: "center" }} >
+      <Card  onClick={() => {
+                  navigate(`/items/${id}`);
+                }}  style={{ margin: 10, width: 350, 
+                backgroundColor: "#E7FFF2",display: "flex", flexWrap: "wrap", textAlign: "center", justifyContent: "center" }} >
         <img style={{
           width: '100%', height: 300,
           objectFit: "cover"
@@ -22,7 +25,7 @@ export function ItemCard({ img, name, id, getItemAPI }) {
         <CardContent>
           <div className="itemCredentials">
             <span className="itemName">{`${name}`}
-              <IconButton
+              {/* <IconButton
                 aria-label="Item Details"
                 size="small"
                 className="infoIcon"
@@ -31,7 +34,7 @@ export function ItemCard({ img, name, id, getItemAPI }) {
                   navigate(`/items/${id}`);
                 }} >
                 <InfoIcon />
-              </IconButton>
+              </IconButton> */}
             </span>
           </div>
         </CardContent>

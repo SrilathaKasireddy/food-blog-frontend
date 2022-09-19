@@ -115,7 +115,8 @@ h1{
   text-align: center;
   color: #01492f;
   font-weight: bold;
-  background-color: #e5f6f0
+  background-color: #e5f6f0;
+  min-height: 100vh;
 }
 
 sub{
