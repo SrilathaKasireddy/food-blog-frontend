@@ -14,11 +14,11 @@ export function ItemCard({ img, name, id, getItemAPI }) {
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <div id="container-main" style={{ display: "flex", flexWrap: "wrap" }}>
-      <Card  onClick={() => {
-                  navigate(`/items/${id}`);
-                }}  style={{ margin: 10, width: 350, 
+      <Card   style={{ margin: 10, width: 350, 
                 backgroundColor: "#E7FFF2",display: "flex", flexWrap: "wrap", textAlign: "center", justifyContent: "center" }} >
-        <img style={{
+        <img  onClick={() => {
+                  navigate(`/items/${id}`);
+                }}  style={{
           width: '100%', height: 300,
           objectFit: "cover"
         }} className="itemImage" src={img} alt={name} />
