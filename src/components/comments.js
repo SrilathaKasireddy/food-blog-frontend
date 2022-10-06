@@ -3,12 +3,14 @@ import CommentCard from './commentsCard';
 import { API } from '../global';
 import { useNavigate } from "react-router-dom";
 import React  from 'react';
+import { object } from 'yup/lib/locale';
 
 
 export default function Comments() {
   const navigate = useNavigate();
   const [commentInfo, setcommentInfo] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("token"));
+  
   function getCommentAPI() {
     fetch(`${API}/comments`, {
       method: "GET",
@@ -26,7 +28,9 @@ export default function Comments() {
   useEffect(() => {
     getCommentAPI();
   }, []);
-// {console.log(commentInfo,"poooo")}
+
+
+
   return (
     <div id="heading-comment" >
       <h4 >Comments</h4>
@@ -35,6 +39,7 @@ export default function Comments() {
           console.log(value,'value')
           return <CommentCard key={value._id}
             id={value._id}
+            createdAt ={value.createdAt}
             UserName={value.UserName} Comment={value.Comment}
             commentInfo={commentInfo}
             setcommentInfo={setcommentInfo}

@@ -28,11 +28,16 @@ export default function CommentAdditionForm() {
   console.log(token)
   if (token)
     var Username = parseJwt(token).UserName
+    
+
+    
 
   const { handleBlur, handleChange, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
       UserName: Username,
       Comment: "",
+      createdAt:new Date().toLocaleString()
+
     },
     validationSchema: formValidationSchema,
     onSubmit: (values) => AddCommentAPI(values)
@@ -43,15 +48,18 @@ export default function CommentAdditionForm() {
       {
         method: "POST",
         body: JSON.stringify(newComment),
+        
         headers: {
           "Content-Type": "application/json",
           "x-auth-token": `${token}`
         }
       }
     )
+    
       // .then(() => navigate("/items"))
       .then(() => window.location.reload())
   }
+ 
   return (
     <Grid container direction="column" alignItems="center" justify="center">
       <form onSubmit={handleSubmit} style={{ padding: "5%" }} >

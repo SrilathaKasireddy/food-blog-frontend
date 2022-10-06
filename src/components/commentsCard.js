@@ -7,8 +7,9 @@ import { API } from "../global"
 import React from 'react';
 import "../App.css"
 export default function CommentCard({ UserName,
-  Comment, commentInfo, _id, id, getCommentAPI }) {
+  Comment, commentInfo, _id, id, getCommentAPI ,createdAt}) {
   const navigate = useNavigate();
+  
 
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
@@ -17,6 +18,7 @@ export default function CommentCard({ UserName,
         <div className="Credentials">
           <span>PostedBy  </span> <span style={{ color: "green", backgroundColor: "white" }}>
             {`${UserName}`}</span>
+            <span>  On {`${createdAt}`}</span>
           <div id="comment">{`${Comment}`}
             <IconButton
               aria-label="Item Delete"
