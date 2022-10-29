@@ -39,7 +39,7 @@ export function ItemCard({ img, name, id, getItemAPI }) {
           </div>
         </CardContent>
         <div>
-          <IconButton
+          {/* <IconButton
             aria-label="Item Edit"
             style={{ margin: "auto", padding: "20px" }}
             className="editIcon"
@@ -64,7 +64,7 @@ export function ItemCard({ img, name, id, getItemAPI }) {
             }}>
             <DeleteIcon />
             <h6>Delete</h6>
-          </IconButton>
+          </IconButton> */}
         </div>
       </Card>
     </div>

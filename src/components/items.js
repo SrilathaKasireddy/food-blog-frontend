@@ -4,7 +4,7 @@ import { API } from '../global';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 import React  from 'react';
 
 export default function Items() {
@@ -71,13 +71,13 @@ export default function Items() {
             return navigate("/home");
           }}
         > <HomeIcon />  Back to Home</Button>
-        <Button style={{
+        {/* <Button style={{
           backgroundColor: "#277970", color: "white",
           margin: 10
         }} variant="outlined" onClick={() => {
           return navigate("/additems");
         }}
-        >  <AddIcon />AddItem</Button>
+        >  <AddIcon />AddItem</Button> */}
         <input
           type="search"
           value={item}
