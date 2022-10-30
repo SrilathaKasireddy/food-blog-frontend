@@ -5,17 +5,21 @@ import Card from '@mui/material/Card';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { API } from "../global"
 import React from 'react';
+import Comments from "./comments"
 import "../App.css"
+
 export default function CommentCard({ UserName,
-  Comment, commentInfo, _id, id, getCommentAPI ,createdAt}) {
+  Comment, commentInfo, _id, id,postId ,getCommentAPI ,createdAt, routeId}) {
   const navigate = useNavigate();
   
 
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <div id="containermain">
-      <Card style={{ backgroundColor: "whitesmoke", textAlign: "center", justifyContent: "center" }}>
+      {console.log(routeId,id,"jtu")}
+      {routeId===postId &&<Card style={{ backgroundColor: "whitesmoke", textAlign: "center", justifyContent: "center" }}>
         <div className="Credentials">
+       
           <span>PostedBy  </span> <span style={{ color: "green", backgroundColor: "white" }}>
             {`${UserName}`}</span>
             <span>  On {`${createdAt}`}</span>
@@ -37,7 +41,7 @@ export default function CommentCard({ UserName,
             </IconButton>
           </div>
         </div>
-      </Card>
+      </Card>}
     </div>
   );
 

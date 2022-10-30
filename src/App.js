@@ -11,7 +11,7 @@ import { Register } from "./components/Register";
 import { ForgetPassword } from './components/ForgetPassword';
 import { ChangePassword } from "./components/ChangePassword";
 import { PasswordUpdated } from "./components/PasswordUpdated";
-import CommentAdditionForm from "./components/addcomment";
+import CommentAdditionForm from "./components/itemdetails";
 import NotFound from "./components/Notfound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import React  from 'react';

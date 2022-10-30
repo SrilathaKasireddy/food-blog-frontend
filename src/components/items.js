@@ -90,9 +90,9 @@ export default function Items() {
           }}
         />
         <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {foundItems && foundItems.length > 0 ? (
+    {foundItems && foundItems.length > 0 ? (
             foundItems.map((item) => (
-              <ItemCard key={item._id} id={item._id}
+    <ItemCard key={item._id} id={item._id}
                 img={item.imgg} name={item.namee}
                 // content={value.contentt} 
                 method={item.method}
