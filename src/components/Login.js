@@ -49,7 +49,7 @@ export default function Login() {
     initialValues: initialValues,
     validationSchema: userValidationSchema,
     onSubmit: (userDetail) => {
-      console.log("onSubmit", userDetail);
+      // console.log("onSubmit", userDetail);
       loginUser(userDetail);
     },
   });

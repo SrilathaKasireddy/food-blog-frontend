@@ -36,7 +36,7 @@ export function ForgetPassword() {
     initialValues: initialValues,
     validationSchema: userValidationSchema,
     onSubmit: (emailDetail) => {
-      console.log("onSubmit", emailDetail);
+      // console.log("onSubmit", emailDetail);
       forgetPassword(emailDetail);
     },
   });

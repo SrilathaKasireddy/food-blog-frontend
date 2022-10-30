@@ -14,12 +14,16 @@ export default function CommentCard({ UserName,
   
 
   const [token, setToken] = useState(localStorage.getItem("token"));
+  
+          
   return (
     <div id="containermain">
-      {console.log(routeId,id,"jtu")}
+      {/* {console.log(routeId,id,"jtu")} */}
+      
+      
       {routeId===postId &&<Card style={{ backgroundColor: "whitesmoke", textAlign: "center", justifyContent: "center" }}>
         <div className="Credentials">
-       
+        
           <span>PostedBy  </span> <span style={{ color: "green", backgroundColor: "white" }}>
             {`${UserName}`}</span>
             <span>  On {`${createdAt}`}</span>

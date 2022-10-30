@@ -81,10 +81,6 @@ export default function ItemDetails() {
     </div>
   )
 }
-{/* { postId = id ?    <CommentCard/> :  <> </> }
-     {console.log(postId,"and",id)} */}
-
-
 
 
 const formValidationSchema = yup.object({

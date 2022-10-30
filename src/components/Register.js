@@ -46,7 +46,7 @@ export function Register() {
     initialValues: initialValues,
     validationSchema: userValidationSchema,
     onSubmit: (newUser) => {
-      console.log("onSubmit", newUser);
+      // console.log("onSubmit", newUser);
       regUser(newUser);
     },
   });

@@ -87,7 +87,7 @@ function SetNewPassword({ id }) {
     initialValues: initialValues,
     validationSchema: userValidationSchema,
     onSubmit: (newPassword) => {
-      console.log("onSubmit", newPassword);
+      // console.log("onSubmit", newPassword);
       changePassword(newPassword);
     },
   });

@@ -34,11 +34,10 @@ export default function Comments() {
 
   return (
     <div id="heading-comment" >
-      <h4 >Comments</h4>
       <div className="commentsList" >
-         {console.log(commentInfo,"HEY")}
+         {/* {console.log(commentInfo,"HEY")} */}
         {commentInfo.map((value, index) => {
-          console.log(value,'value')
+          // console.log(value,'value')
           return <CommentCard key={value._id}
             id={value._id}
             createdAt ={value.createdAt}
